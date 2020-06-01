@@ -1,7 +1,0 @@
-﻿  computation.cpp
-  dictionary.cpp
-  loadXML.cpp
-  main.cpp
-  Generating Code...
-C:\Users\MonPC\Documents\PS2\SB2\ASCII2SHIFTJIS\loadXML.cpp(83): warning C4715: 'loadDOM': not all control paths return a value
-  ASCII2SHIFTJIS.vcxproj -> C:\Users\MonPC\Documents\PS2\SB2\ASCII2SHIFTJIS\x64\Debug\ASCII2SHIFTJISJIS.exe
