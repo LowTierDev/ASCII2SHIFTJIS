@@ -1,3 +1,4 @@
 # Actually within the repository
 /Debug/*
 /Variables/Converted.txt
+/x64/*
