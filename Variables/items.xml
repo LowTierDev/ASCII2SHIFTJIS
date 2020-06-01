@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?stylesheet type="text/xsl" href="stock.xsl"?>
 <data xmlns:dt="urn:schemas-microsoft-com:datatypes">
-	<size>36</size>
+	<size>62</size>
 	<Entry value = "A" definition = "0018"/>
 	<Entry value = "B" definition = "0019"/>
 	<Entry value = "C" definition = "001A"/>
@@ -12,7 +12,7 @@
 	<Entry value = "H" definition = "001F"/>
 	<Entry value = "I" definition = "0020"/>
 	<Entry value = "J" definition = "0021"/>
-	<Entry value = "K" definition = "0060"/>
+	<Entry value = "K" definition = "006B"/>
 	<Entry value = "L" definition = "0022"/>
 	<Entry value = "M" definition = "0023"/>
 	<Entry value = "N" definition = "0024"/>
@@ -27,10 +27,35 @@
 	<Entry value = "X" definition = "002D"/>
 	<Entry value = "Y" definition = "002E"/>
 	<Entry value = "Z" definition = "002F"/>
+	<Entry value = "a" definition = "0018"/>
+	<Entry value = "b" definition = "0019"/>
+	<Entry value = "c" definition = "001A"/>
+	<Entry value = "d" definition = "001B"/>
+	<Entry value = "e" definition = "001C"/>
+	<Entry value = "f" definition = "001D"/>
+	<Entry value = "g" definition = "001E"/>
+	<Entry value = "h" definition = "001F"/>
+	<Entry value = "i" definition = "0020"/>
+	<Entry value = "j" definition = "0021"/>
+	<Entry value = "k" definition = "006B"/>
+	<Entry value = "l" definition = "0022"/>
+	<Entry value = "m" definition = "0023"/>
+	<Entry value = "n" definition = "0024"/>
+	<Entry value = "o" definition = "0025"/>
+	<Entry value = "p" definition = "0026"/>
+	<Entry value = "r" definition = "0027"/>
+	<Entry value = "s" definition = "0028"/>
+	<Entry value = "t" definition = "0029"/>
+	<Entry value = "u" definition = "002A"/>
+	<Entry value = "v" definition = "002B"/>
+	<Entry value = "w" definition = "002C"/>
+	<Entry value = "x" definition = "002D"/>
+	<Entry value = "y" definition = "002E"/>
+	<Entry value = "z" definition = "002F"/>
 	<Entry value = "+" definition = "055A"/>
 	<Entry value = "-" definition = "0009"/>
 	<Entry value = "!" definition = "0001"/>
-	<Entry value = " " definition = "0040"/>
+	<Entry value = "\s\" definition = "0000"/>
 	<Entry value = "\n\" definition = "FFFE"/>
 	<Entry value = "\end\" definition = "FFFF"/>
 	<Entry value = "\colour\" definition = "FF92"/>

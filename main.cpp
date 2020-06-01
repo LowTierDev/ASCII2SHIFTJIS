@@ -106,7 +106,7 @@ int main()
                 }
                 else if (i == line.size() - 1)
                 {
-                    convertMe = "0000";
+                    convertMe = "0000\n";
                     addCharacters = true;
                 }
 

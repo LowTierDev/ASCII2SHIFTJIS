@@ -101,7 +101,7 @@ dictionary* createDictionary(IXMLDOMDocument* theDoc)
     IXMLDOMNamedNodeMap* attributes = NULL;
     long listLength = NULL;
     allEntries->get_length(&listLength);
-    dictionary* returnMe = new dictionary((int)listLength - 1);
+    dictionary* returnMe = new dictionary((int)listLength);
 
     for (long index = 0; index < listLength; index++)
     {
