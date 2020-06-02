@@ -3,9 +3,14 @@
 #include "loadXML.h"
 #include <fstream>
 #include <comutil.h>
+#include <iomanip>
+#include <sstream>
+#include <algorithm>
 
 using std::cin;
 using std::cout;
+using std::hex;
+using std::stoi;
 using std::size_t;
 using std::string;
 using std::ifstream;
@@ -51,6 +56,18 @@ string segment(string line, size_t* currentPosition)
     return temp;
 }
 
+template< typename T >
+string getPS2Address(T i)
+{
+    std::stringstream stream;
+    stream //<< "0x"
+        << std::setfill('0') << std::setw(8) // sizeof(your_type)*2
+        << std::hex << i;
+    string returnMe = stream.str();
+    std::transform(returnMe.begin(), returnMe.end(), returnMe.begin(), ::toupper);
+    return returnMe;//stream.str();
+}
+
 
 int main()
 {
@@ -79,9 +96,19 @@ int main()
         ofstream outputStream = ofstream();
         inputStream.open(inputFile);
         outputStream.open(outputFile);
+        bool initialLine = true;
+        int cAddress, nAddress;
         
         for (string line; getline(inputStream, line);)
         {
+            if (initialLine)
+            {
+                size_t pos = line.find("$");
+                cAddress = stoi(line.substr(pos + 1), nullptr, 16);
+                nAddress = cAddress;
+                initialLine = false;
+                continue;
+            }
             string convertMe, temp, convertedLine = "";
             BSTR hexLine = SysAllocString(L"");
             int printCount = 0;
@@ -97,6 +124,7 @@ int main()
                 wprintf(getMe);
                 hexLine = Concat(hexLine, conversionTable->get(getMe));
                 printCount++;
+                nAddress += 0x2;
 
                 if (printCount == 2)
                 {
@@ -108,6 +136,7 @@ int main()
                 {
                     convertMe = "0000\n";
                     addCharacters = true;
+                    nAddress += 0x2;
                 }
 
                 if (addCharacters)
@@ -124,8 +153,9 @@ int main()
                 }
                 SysFreeString(getMe);
             }
-            cout << "\n" << convertedLine << "\n";
-            outputStream << convertedLine << "\n";
+            cout << "\n" << "address $" << getPS2Address(cAddress) << "\n" << convertedLine << "\n";
+            outputStream << "address $" << getPS2Address(cAddress) << "\n" << convertedLine << "\n";
+            cAddress = nAddress;
             SysFreeString(hexLine);
             temp.clear();
             convertMe.clear();

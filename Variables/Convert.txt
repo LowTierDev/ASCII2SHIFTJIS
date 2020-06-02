@@ -1,5 +1,7 @@
-\colour\\yellow\Imperial\s\Hand\s\Guard\white\\end\
-\colour\\yellow\Daruma\s\of\s\Victory\white\\end\
-\colour\\yellow\Attack\s\Fan\white\\end\
-\colour\\yellow\Demon\s\Ritual\s\Tool\white\\end\
-\colour\\yellow\Eternal\s\Ice\s\Crystal\white\\end\
+address $000B09E4
+\colour\\yellow\Easy\s\Money\s\Wallet\white\\end\
+Second Lottery Ticket
+All or Nothing Oracle
+Senju Kannon's Blessing
+Honor of Military Exploits
+Cup of Glory
