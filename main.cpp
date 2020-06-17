@@ -19,14 +19,6 @@ using std::wstring;
 using _com_util::ConvertStringToBSTR;
 using _com_util::ConvertBSTRToString;
 
-// Goals:
-// x    Open an XML file
-// x    load conversion table from the file
-// x    Open a file to convert
-// x    go through a file and convert all the strings into the appropriate hex
-// x    Arrange the hex in the right manner (4 byte words)
-// o    save file as a regular file
-
 BSTR Concat(BSTR a, BSTR b)
 {
     auto lengthA = SysStringLen(a);
@@ -68,23 +60,34 @@ string getPS2Address(T i)
     return returnMe;//stream.str();
 }
 
+string* getPaths()
+{
+    string* returnMe = new string[3];
+    cout << "Please Enter the dictionary XML file's path: ";
+    //cin >> sourcePath;
+    returnMe[0] = "C:/Users/MonPC/Documents/PS2/SB2/ASCII2SHIFTJIS/Variables/items.xml";
+    cout << "\nPlease Enter the path to the Input File to convert: ";
+    //cin >> inputFile;
+    returnMe[1] = "C:/Users/MonPC/Documents/PS2/SB2/ASCII2SHIFTJIS/Variables/Convert.txt";
+    size_t found = returnMe[1].find_last_of("/\\");
+    if (found == string::npos)
+        returnMe[2] = "Converted.txt";
+    else
+        returnMe[2] = returnMe[1].substr(0, found) + "/Converted.txt";//inputFile.substr(found + 1);
+
+    return returnMe;
+}
+
 
 int main()
 {
-    string sourcePath, inputFile, outputFile;
-    cout << "Please Enter the dictionary XML file's path: ";
-    //cin >> sourcePath;
-    sourcePath = "C:/Users/MonPC/Documents/PS2/SB2/ASCII2SHIFTJIS/Variables/items.xml";
-    cout << "\nPlease Enter the path to the Input File to convert: ";
-    //cin >> inputFile;
-    inputFile = "C:/Users/MonPC/Documents/PS2/SB2/ASCII2SHIFTJIS/Variables/Convert.txt";
-    size_t found = inputFile.find_last_of("/\\");
-    if (found == string::npos)
-        outputFile = "Converted.txt";
-    else
-        outputFile = inputFile.substr(0, found) + "/Converted.txt";//inputFile.substr(found + 1);
+    // The File Paths
+    string* thePaths = getPaths();
+    string sourcePath = thePaths[0];
+    string inputFile = thePaths[1];
+    string outputFile = thePaths[2];
 
-    // convert string from ASCII into PCWSTR
+    // 
     wstring stemp = wstring(sourcePath.begin(), sourcePath.end());
     LPCWSTR sw = stemp.c_str();
 
@@ -109,6 +112,7 @@ int main()
                 initialLine = false;
                 continue;
             }
+
             string convertMe, temp, convertedLine = "";
             BSTR hexLine = SysAllocString(L"");
             int printCount = 0;
@@ -122,7 +126,15 @@ int main()
                 const char* cstr = convertMe.c_str();
                 BSTR getMe = ConvertStringToBSTR(cstr);
                 wprintf(getMe);
-                hexLine = Concat(hexLine, conversionTable->get(getMe));
+                BSTR definition = conversionTable->get(getMe);
+                if (definition == NULL)
+                {
+                    cout << "Couldn't find: ";
+                    wprintf(getMe);
+                    break;
+                }
+                else
+                    hexLine = Concat(hexLine, definition);
                 printCount++;
                 nAddress += 0x2;
 
@@ -167,5 +179,7 @@ int main()
         conversionTable->~dictionary();
         CoUninitialize();
     }
+
+    delete[] thePaths;
     return 0;
 }

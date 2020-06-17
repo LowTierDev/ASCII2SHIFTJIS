@@ -31,7 +31,7 @@ BSTR dictionary::get(BSTR key)
 		if (0 == wcscmp(key, mapping[i][0]))
 			return mapping[i][1];
 	}
-	return SysAllocString(L"");
+	return NULL;
 }
 
 void dictionary::put(BSTR key, BSTR value)

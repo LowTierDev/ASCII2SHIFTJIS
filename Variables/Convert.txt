@@ -1,7 +1,7 @@
-address $000B09E4
-\colour\\yellow\Easy\s\Money\s\Wallet\white\\end\
-Second Lottery Ticket
-All or Nothing Oracle
-Senju Kannon's Blessing
-Honor of Military Exploits
-Cup of Glory
+address $000B3188
+Gain\s\more\s\gold\s\per\s\coin\s\but\s\\colour\\red\every\s\time\n\damage\s\is\s\received\s\gold\s\is\s\halved\white\\end\
+The\s\drawing\s\of\s\the\s\spoils\s\of\s\war\s\items\n\after\s\battle\s\can\s\be\s\redone\s\once\end\
+The\s\drawing\s\of\s\the\s\spoils\s\of\s\war\s\the\s\levels\n\of\s\items\s\after\s\battle\s\can\s\be\s\redone\s\once\end\
+Clear\s\the\s\stage\s\with\s\a\s\hit\s\count\s\over\s\1000\n\and\s\a\s\luxurious\s\treasure\s\chest\s\is\s\added\end\
+Clear\s\the\s\stage\s\with\s\over\s\500\s\kills\s\and\n\a\s\luxurious\s\treasure\s\chest\s\is\s\added\end\
+Double\s\EXP\s\for\s\stage\s\bonus\n\and\s\any\s\captured\s\bases\end\qr

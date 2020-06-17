@@ -53,8 +53,23 @@
 	<Entry value = "y" definition = "002E"/>
 	<Entry value = "z" definition = "002F"/>
 	<Entry value = "+" definition = "055A"/>
-	<Entry value = "-" definition = "0009"/>
+	<Entry value = "-" definition = "00D0"/>
 	<Entry value = "!" definition = "0001"/>
+	<Entry value = "/" definition = "000B"/>
+	<Entry value = "0" definition = "000C"/>
+	<Entry value = "1" definition = "000D"/>
+	<Entry value = "2" definition = "000E"/>
+	<Entry value = "3" definition = "000F"/>
+	<Entry value = "4" definition = "0010"/>
+	<Entry value = "5" definition = "0011"/>
+	<Entry value = "6" definition = "0012"/>
+	<Entry value = "7" definition = "0013"/>
+	<Entry value = "8" definition = "0014"/>
+	<Entry value = "9" definition = "0015"/>
+	<Entry value = "." definition = "000A"/>
+	<Entry value = "," definition = "0043"/>
+	<Entry value = "\lq\" definition = "003A"/>
+	<Entry value = "\rq\" definition = "003B"/>
 	<Entry value = "\s\" definition = "0000"/>
 	<Entry value = "\n\" definition = "FFFE"/>
 	<Entry value = "\end\" definition = "FFFF"/>
